@@ -41,7 +41,8 @@ const allowedOrigins = [
 
 // Dynamic CORS middleware
 app.use((req, res, next) => {
-  const origin = req.headers.origin;              // get the frontend making the request
+  const origin = req.headers.origin;  
+   console.log("Request origin:", origin);            // get the frontend making the request
   if (allowedOrigins.includes(origin)) {          // check if it’s in the allowed list
     res.setHeader("Access-Control-Allow-Origin", origin); // allow this exact frontend
   }
