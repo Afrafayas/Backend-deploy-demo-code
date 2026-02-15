@@ -7,12 +7,13 @@ const app = express();
 
 const userRoutes = require('./routes/userRoutes');
 
-app.use(cors(
-    {
-        origin: 'http://localhost:5173',
-        credentials: true
-    }
-));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://frontend-deploy-demo-code-4p84.vercel.app"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 
